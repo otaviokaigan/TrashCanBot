@@ -12,7 +12,7 @@ end
 module MentionController
   def self.handle(msgmention)
     message = msgmention.content.downcase
-    if message.include?('e ai') || message.include?('aoi') 
+    if message.include?('e ai') || message.include?('oi') 
         msgmention.respond('opa, tudo beleza?')
         
     elsif message.include?('vai catar coquinho') || message.include?('vai se lascar')
