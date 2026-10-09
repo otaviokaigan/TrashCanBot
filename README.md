@@ -15,7 +15,7 @@ Follow these steps to get the bot up and running:
    git clone [https://github.com/otaviokaigan/TrashCanBot.git](https://github.com/otaviokaigan/TrashCanBot.git)
    cd TrashCanBot
    
-2. **Install [dependencies](https://github.com/otaviokaigan/TrashCanBot#installation--quick-start):**
+2. **Install [dependencies](https://github.com/otaviokaigan/TrashCanBot#prerequisites--system-compatibility):**
    If you don't have [Bundler](https://bundler.io/) installed yet, run:
    ```bash
    gem install bundler
