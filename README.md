@@ -6,8 +6,6 @@ This is a project for my personal use, an experimental bot created using **Ruby*
 
 The bot's language is Brazilian Portuguese (PT-BR) because, as mentioned before, it's a project for my personal use.
 
---- 
-
 ## Installation & Quick Start
 
 Follow these steps to get the bot up and running:
