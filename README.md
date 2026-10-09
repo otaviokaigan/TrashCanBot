@@ -25,7 +25,7 @@ Follow these steps to get the bot up and running:
    bundle install
    ```
 3. **Set up environment variables:**
-   Configure your secrets inside `app/.env` (refer to the [Environment Variables](https://github.com/otaviokaigan/TrashCanBot#environment-variables) section).
+   Configure your secrets inside `app/.env` (refer to the [Environment Variables](#environment-variables) section).
 4. **Run the bot:**
    Navigate into the `app/` directory (or run from root):
    ```bash
