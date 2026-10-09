@@ -2,6 +2,12 @@
 
 > **Status:** In development
 
+This is a project for my personal use, an experimental bot created using **Ruby** with the [Discordrb](https://github.com/shardlab/discordrb) [gem](https://rubygems.org/gems/discordrb) to perform functions that I thought would be useful for gaming activities. So far, it only serves to open and close a Minecraft server using the CraftyController API.
+
+The bot's language is Brazilian Portuguese (PT-BR) because, as mentioned before, it's a project for my personal use.
+
+--- 
+
 ## Installation & Quick Start
 
 Follow these steps to get the bot up and running:
@@ -27,12 +33,6 @@ Follow these steps to get the bot up and running:
    ```bash
    cd app
    ruby main.rb
-   
---- 
-
-This is a project for my personal use, an experimental bot created using **Ruby** with the [Discordrb](https://github.com/shardlab/discordrb) [gem](https://rubygems.org/gems/discordrb) to perform functions that I thought would be useful for gaming activities. So far, it only serves to open and close a Minecraft server using the CraftyController API.
-
-The bot's language is Brazilian Portuguese (PT-BR) because, as mentioned before, it's a project for my personal use.
 
 ## Prerequisites & System Compatibility
 
