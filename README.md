@@ -24,9 +24,13 @@ Follow these steps to get the bot up and running:
    ```bash
    bundle install
    ```
-3. **Set up environment variables:**
+3. Verify GitHub CLI:
+   Ensure [`gh`](https://cli.github.com/) is installed and authenticated:
+   ```bash
+   gh auth status
+4. **Set up environment variables:**
    Configure your secrets inside `app/.env` (refer to the [Environment Variables](#environment-variables) section).
-4. **Run the bot:**
+5. **Run the bot:**
    Navigate into the `app/` directory (or run from root):
    ```bash
    cd app
