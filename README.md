@@ -2,6 +2,34 @@
 
 > **Status:** In development
 
+## Installation & Quick Start
+
+Follow these steps to get the bot up and running:
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/otaviokaigan/TrashCanBot.git](https://github.com/otaviokaigan/TrashCanBot.git)
+   cd TrashCanBot
+   
+2. **Install dependencies:**
+   If you don't have [Bundler](https://bundler.io/) installed yet, run:
+   ```bash
+   gem install bundler
+   ```
+   Then install the required gems from the Gemfile:
+   ```bash
+   bundle install
+   ```
+3. **Set up environment variables:**
+   Configure your secrets inside `app/.env` (refer to the [Environment Variables](https://github.com/otaviokaigan/TrashCanBot#environment-variables) section).
+4. **Run the bot:**
+   Navigate into the `app/` directory (or run from root):
+   ```bash
+   cd app
+   ruby main.rb
+   
+--- 
+
 This is a project for my personal use, an experimental bot created using **Ruby** with the [Discordrb](https://github.com/shardlab/discordrb) [gem](https://rubygems.org/gems/discordrb) to perform functions that I thought would be useful for gaming activities. So far, it only serves to open and close a Minecraft server using the CraftyController API.
 
 The bot's language is Brazilian Portuguese (PT-BR) because, as mentioned before, it's a project for my personal use.
