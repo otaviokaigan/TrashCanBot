@@ -1,4 +1,6 @@
-# Command for testing
+# frozen_string_literal: true
+
+# Command for testing the discord slash command API call
 
 module TestController
   def self.setup(bot)

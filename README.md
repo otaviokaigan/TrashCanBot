@@ -1,32 +1,69 @@
-# 🗑️ TrashCan Bot
+# TrashCan Bot
 
-> **Status:** Em Desenvolvimento 🚧
+> **Status:** In development
 
-Um bot experimental para Discord desenvolvido em **Ruby**, focado no aprendizado da sintaxe da linguagem e na implementação de uma **Arquitetura MVC (Model-View-Controller)** adaptada para bots.
+This is a project for my personal use, an experimental bot created using **Ruby** with the [Discordrb](https://github.com/shardlab/discordrb) [gem](https://rubygems.org/gems/discordrb) to perform functions that I thought would be useful for gaming activities. So far, it only serves to open and close a Minecraft server using the CraftyController API.
 
-## 💻 Tecnologias e Conceitos
+The bot's language is Brazilian Portuguese (PT-BR) because, as mentioned before, it's a project for my personal use.
 
-* **Ruby** (Linguagem Principal)
-* **Discordrb** (Gem para interação com a API do Discord)
-* **Dotenv** (Segurança de credenciais)
-* **Padrão MVC:** Estrutura de pastas organizada separando responsabilidades, preparada para escalabilidade futura.
+## Prerequisites & System Compatibility
 
-## ⚙️ Funcionalidades
+> **Note:** This project is designed and tested for **Linux/macOS** environments (or Windows via WSL2).
 
-O bot atua como um laboratório de testes para interações:
+The core server management commands in `ServerManager` rely on Unix-specific shell features (such as `echo` piping, `nohup`, background processes `&`, and standard file redirection `2>&1`).
 
-* 🔧 **Slash Commands (/test):** Verificação de conectividade e status. O comando testa se o bot está recebendo e respondendo corretamente às interações da API do Discord.
-* 🛡️ **Detector de Menções:** Lógica condicional (`Controllers`) que processa mensagens naturais e responde baseando-se no contexto (saudações, reações, etc).
+To run this bot, make sure your host machine has:
 
-## 📂 Estrutura do Projeto
+* **Ruby** (v3.0 or higher)
+* **GitHub CLI (`gh`)** installed and available in your system
+* **Linux/macOS terminal** (or **WSL2** if running on Windows)
+* **cURL** (installed by default in most Linux distributions)
 
-O projeto segue uma organização MVC para facilitar a manutenção:
+## Technologies & Concepts
+
+* **Ruby** (Main language)
+* **Discordrb** (Gem for interaction with Discord API)
+* **Dotenv** (Credential security)
+* **CraftyController** (Interaction with CraftyController API for open and close a Minecraft server)
+
+## Functionalities
+
+* 🔧 **Slash Commands (/test):** Connectivity and status check, created exclusively for testing the Slash command on Discord.
+
+*    **/iniciar:** To open a hosted Minecraft server.
+*    **/fechar:** Save and stop the Minecraft server.
+
+## Environment Variables
+
+To run this bot, create a `.env` file inside the `app/` directory with the following keys:
+
+| Variable | Description |
+| :--- | :--- |
+| `TOKEN` | Your Discord Bot Token obtained from the [Discord Developer Portal](https://discord.com/developers/applications). |
+| `GHCLI` | A GitHub Personal Access Token (PAT) with permissions to authenticate the GitHub CLI (`gh`). |
+| `CDNAME` | The exact name or ID of the GitHub Codespace where the Minecraft server is hosted. |
+| `SERVER_ID` | The ID of the specific Minecraft server managed inside Crafty Controller. |
+| `CRAFTY_TOKEN` | The API Token generated inside Crafty Controller for authentication. |
+
+## Project Structure
+
+The project use the Command Service Pattern structure. Previously, the project was MVC, but as I progressed with development, I realized that the MVC pattern didn't make sense for this project.
 
 ```text
 TrashCanBot/
 ├── app/
-│   ├── controllers/    # Lógica de comandos e respostas (Ativo)
-│   ├── models/         # Estrutura preparada para Banco de Dados (Futuro)
-│   └── views/          # Estrutura preparada para Templates de Resposta (Futuro)
-├── .env                # Token (Seguro/Não versionado)
-├── main.rb             # Arquivo de entrada (Execução)
+│   ├── commands/                 # Discord application/slash commands
+│   │   ├── minecraft_server/
+│   │   │   ├── initiate_server.rb
+│   │   │   └── stop_server.rb
+│   │   └── initial_commands.rb
+│   ├── services/                 # Core business logic & external integrations
+│   │   ├── minecraft_server/
+│   │   │   └── server_manager.rb
+│   │   └── commands_utils.rb     # Cooldown and state management utilities
+│   ├── storage/                  # Persistent data storage
+│   │   └── state.json            # Execution timestamps for cooldowns
+│   ├── .env                      # Environment variables
+│   └── main.rb                   # Bot initialization and event handlers
+├── .gitignore
+└── README.md

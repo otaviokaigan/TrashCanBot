@@ -1,7 +1,11 @@
+# frozen_string_literal: true
+
 require 'discordrb'
-require_relative './app/controllers/initialcommands'
-require_relative './app/controllers/minecraft-server.rb'
 require 'dotenv/load'
+
+require_relative 'commands/initial_commands'
+require_relative 'commands/minecraft_server/initiate_server'
+require_relative 'commands/minecraft_server/stop_server'
 
 bot = Discordrb::Bot.new token: ENV['TOKEN']
 puts 'Bot ta acordando...'
@@ -14,7 +18,7 @@ InitiateServer.setup(bot)
 StopServer.setup(bot)
 
 bot.mention do |msgmention|
-    MentionController.handle(msgmention)
+  MentionController.handle(msgmention)
 end
 
 at_exit { bot.stop }
