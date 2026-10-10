@@ -15,9 +15,32 @@ module CommandsUtils
       content = File.read(FILEPATH)
       data = JSON.parse(content)
 
+      return nil unless data['last_executed_at']
+
       Time.now.to_i - data['last_executed_at']
     else
       nil
     end
+  end
+
+  def self.server_open?
+    return false unless File.exist?(FILEPATH)
+
+    content = File.read(FILEPATH)
+    data = JSON.parse(content)
+    data['server_open'] == true
+  end
+
+  def self.update_server_status(is_open)
+    if File.exist?(FILEPATH)
+      content = File.read(FILEPATH)
+      data = JSON.parse(content)
+    else
+      data = {}
+    end
+
+    data['server_open'] = is_open
+    File.write(FILEPATH, JSON.pretty_generate(data))
+    is_open
   end
 end
