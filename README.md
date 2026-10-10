@@ -100,7 +100,7 @@ TrashCanBot/
 │   ├── services/                 # Core business logic & external integrations
 │   │   ├── minecraft_server/
 │   │   │   └── server_manager.rb
-│   │   └── commands_utils.rb     # Cooldown and server state management utilities
+│   │   └── commands_utils.rb     # Cooldown and state management utilities
 │   ├── storage/                  # Persistent data storage
 │   │   └── state.json            # Execution timestamps for cooldowns
 │   ├── .env                      # Environment variables
