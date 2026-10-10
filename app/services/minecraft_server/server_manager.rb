@@ -8,7 +8,7 @@ module ServerManager
     system("echo #{ENV['GHCLI']} | gh auth login --with-token --git-protocol ssh")
     # start codespace and minecraft server
     system("gh codespace ssh -c #{ENV['CDNAME']} -- 'nohup /workspaces/freefire4/minecraft/run_crafty.sh > crafty.log 2>&1 & nohup playit > playit.log 2>&1 &'")
-    puts 'Initializing codespace and Minecraft server.'
+    puts 'Codespace and Minecraft server will be initialized soon.'
   end
 
   # method that use github CLI commands to STOP the minecraft server
@@ -23,6 +23,6 @@ module ServerManager
     )
     sleep(15)
     system("gh", "codespace", "stop", "-c", ENV['CDNAME'])
-    puts 'Closing codespace server.'
+    puts 'Codespace server will be closed soon.'
   end
 end
