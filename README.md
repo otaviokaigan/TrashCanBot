@@ -58,10 +58,20 @@ To run this bot, make sure your host machine has:
 
 ## Functionalities
 
+### Commands
+
 * 🔧 **Slash Commands (/test):** Connectivity and status check, created exclusively for testing the Slash command on Discord.
 
 *    **/iniciar:** To open a hosted Minecraft server.
 *    **/fechar:** Save and stop the Minecraft server.
+
+### Server Status
+
+The bot should have a function that checks if the server is open. If it is, the server should not be opened again or it can be closed. If it is closed, the server should not be closed again or it can be opened.
+
+### Cooldown
+
+The bot has a wait timeout function between commands to prevent spam and overloading the Minecraft server.
 
 ## Environment Variables
 
@@ -90,7 +100,7 @@ TrashCanBot/
 │   ├── services/                 # Core business logic & external integrations
 │   │   ├── minecraft_server/
 │   │   │   └── server_manager.rb
-│   │   └── commands_utils.rb     # Cooldown and state management utilities
+│   │   └── commands_utils.rb     # Cooldown and server state management utilities
 │   ├── storage/                  # Persistent data storage
 │   │   └── state.json            # Execution timestamps for cooldowns
 │   ├── .env                      # Environment variables
