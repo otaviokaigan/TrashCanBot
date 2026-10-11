@@ -2,7 +2,7 @@
 
 require 'json'
 
-# this cooldown is to the server not being closed before is completed initialized, for not having problems on the minecraft world
+# a namespace for commands utilities, such as cooldown and open server checker
 module CommandsUtils
   FILEPATH = File.expand_path('../storage/state.json', __dir__)
 
