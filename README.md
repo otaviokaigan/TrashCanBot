@@ -84,6 +84,8 @@ To run this bot, create a `.env` file inside the `app/` directory with the follo
 | `CDNAME` | The exact name or ID of the GitHub Codespace where the Minecraft server is hosted. |
 | `SERVER_ID` | The ID of the specific Minecraft server managed inside Crafty Controller. |
 | `CRAFTY_TOKEN` | The API Token generated inside Crafty Controller for authentication. |
+| `MINECRAFT_ROLE` | The discord role ID to open and close the minecraft server. |
+
 
 ## Project Structure
 
